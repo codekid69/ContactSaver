@@ -6,7 +6,7 @@
   </h1>
   <div class="form-container">
     <%if(locals.user){%>
-      <form action="/contact-app/user/add-contact" method="post">
+      <form action="/user/add-contact" method="post">
         <input type="text" name="name" placeholder="Enter the name" required>
         <input type="number" name="contact" placeholder="Enter the Mobile" required>
         <input class="btn" type="submit" value="Add">
@@ -23,7 +23,7 @@
         <p>
           <%=contact.contact%>
         </p>
-        <a href="/contact-app/user/delete/<%=contact.id%>">X</a>
+        <a href="/user/delete/<%=contact.id%>">X</a>
       </li>
       <%}%>
       <%}else{%>
