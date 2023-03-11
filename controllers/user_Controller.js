@@ -38,7 +38,7 @@ module.exports.createUser = async function (req, res) {
     try {
         register.save();
         req.flash('success','Registration Sucessfull');
-        return res.redirect('/contact-app/user/sign-in')
+        return res.redirect('/user/sign-in')
     } catch (error) {
         console.log(error);
     }
@@ -47,7 +47,7 @@ module.exports.createUser = async function (req, res) {
 //Log in
 module.exports.createSession = function (req, res) {
     req.flash('success','Logged In');
-    return res.redirect('/contact-app');
+    return res.redirect('/');
 }
 
 //Add Contact
@@ -96,6 +96,6 @@ module.exports.destroySession = function (req, res) {
             return;
         }
         req.flash('success','Logged Out');
-        return res.redirect('/contact-app/user/sign-in');
+        return res.redirect('/user/sign-in');
     })
 }

@@ -36,7 +36,7 @@ app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 app.use(flash());
 app.use(customMiddleware.setFlash);
-app.use('/contact-app',require('./routes/index'))
+app.use('/',require('./routes/index'))
 app.listen(port,function(error){
     if(error){
         console.log(`Error ${error}`);

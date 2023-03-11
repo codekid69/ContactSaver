@@ -16,6 +16,6 @@ module.exports.home = async function (req, res) {
         }
     } catch (error) {
         console.log("error"+error);
-        return res.redirect('/contact-app')
+        return res.redirect('/')
     }
 }
