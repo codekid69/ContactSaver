@@ -10,6 +10,7 @@ const MongoStore=require('connect-mongo');
 const flash=require('connect-flash');
 const customMiddleware=require('./config/middleware');
 const expressEjsLayouts=require('express-ejs-layouts');
+require('dotenv').config();
 app.use(express.urlencoded());
 app.use(cookie());
 app.use(expressEjsLayouts);
@@ -28,7 +29,7 @@ app.use(session({
         maxAge:(1000*60*100)
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb://127.0.0.1:27017/Contact-App',
+        mongoUrl:process.env.DATABASE,
     })
 }));
 app.use(passport.initialize());
