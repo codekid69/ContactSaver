@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.footer-container{
+    background-image: linear-gradient(to right, #0e1d23,#1d3944);
+    min-height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

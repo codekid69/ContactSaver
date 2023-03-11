@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header-container{
+    background-image: linear-gradient(to right, #0e1d23,#1d3944);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8%;
+    font-size:1.5rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white ;
+}
+.header-container a{
+    color: white ;
+    text-decoration: none;
+    /* margin-right: 2%; */
+}
+.header-container p i{
+    color: rgb(39, 125, 122);
+}

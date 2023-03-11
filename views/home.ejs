@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/home.css">
+<div class="body-container">
+
+  <h1>
+    Contact List
+  </h1>
+  <div class="form-container">
+    <%if(locals.user){%>
+      <form action="/contact-app/user/add-contact" method="post">
+        <input type="text" name="name" placeholder="Enter the name" required>
+        <input type="number" name="contact" placeholder="Enter the Mobile" required>
+        <input class="btn" type="submit" value="Add">
+      </form>
+
+  </div>
+  <div class="list-container">
+    <%for(contact of user.contacts){%>
+      <li>
+        <i class="fa-solid fa-user"></i>
+        <p>
+          <%=contact.name%>
+        </p>
+        <p>
+          <%=contact.contact%>
+        </p>
+        <a href="/contact-app/user/delete/<%=contact.id%>">X</a>
+      </li>
+      <%}%>
+      <%}else{%>
+        Login/Signup for Saving your Contacts
+        <%}%>
+      </div>
+</div>

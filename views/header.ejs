@@ -1,0 +1,13 @@
+<div class="header-container">
+    <%if(locals.user){%>
+        <p>
+            <i class="fa-solid fa-user"></i>
+            <%=""+user.name%>
+        </p>
+        <a href="/contact-app/user/logout">LogOut</a>
+    <%}else{%>
+            <a href="/contact-app/user/sign-up">SignUp</a>
+            <a href="/contact-app/user/sign-in">SignIn</a>
+    <%}%>
+
+</div>

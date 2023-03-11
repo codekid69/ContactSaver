@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.signin-contianer{
+    /* border: 2px solid black; */
+    background-image: linear-gradient(to right, #0F2027, #203A43,#2C5364);
+    min-height: 86vh;
+}
+.form form{
+    /* border: 2px solid red; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    
+}
+.sbtn{
+    width: 25%;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+.signin-contianer form input{
+    margin-top: 10px;
+    padding: 5px 8px;
+    border-radius: 10px;
+    border-bottom: 1px solid #203A43;
+    background-image: linear-gradient(to right, #0F2027, #203A43,#2C5364);
+}

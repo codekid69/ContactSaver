@@ -1,0 +1,72 @@
+*{
+    margin:0 ;
+    padding: 0;
+}
+.body-container{
+    /* border: 2px solid black; */
+    margin: auto;
+    background-image: linear-gradient(to right, #0F2027, #203A43,#2C5364);
+    min-height: 86vh
+}
+.body-container form{
+    margin-top: 10px;
+}
+.body-container h1{
+   color:white;
+}
+.body-container{
+    overflow-y: hidden;
+}
+.body-container form input{
+    border: none;
+   margin: 0rem 0.5rem;
+   padding: 0.5rem 0.8rem;
+   border-radius: 10px;
+   border-bottom: 1px solid #203A43;
+   background-image: linear-gradient(to right, #0F2027, #203A43,#2C5364);
+}
+.body-container form input::placeholder{
+    color: white;
+}
+.btn{
+    cursor: pointer;
+    color: white;
+}
+.list-container{
+    margin-top: 10px;
+    /* border: 2px solid black; */
+}
+.list-container li {
+    list-style: none;
+    /* border: 2px solid black; */
+    width: 30%;
+    margin: auto;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 1em;
+    background-image: linear-gradient(to right, #0e1d23,#1d3944);
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px -6px #777;
+    
+}
+.list-container li a{
+    text-decoration: none;
+    color: rgb(201, 60, 60);
+}
+
+@media screen and (max-width: 465px) {
+    .form{
+       border: 2px solid black;
+    }
+    .form-container form input{
+        padding: 2px 3px;
+      margin: 0px 1px;
+      margin-bottom: 5px;
+    }
+    .list-container li{
+        width: 90%;
+    }
+  }
