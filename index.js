@@ -1,7 +1,6 @@
 const express=require('express');
 const app=express();
-require('dotenv').config();
-const port=process.env.BASE_URL || 8000;
+const port=process.env.PORT || 8000;
 const db=require('./config/mongoose');
 const cookie=require('cookie-parser');
 const session=require('express-session');
