@@ -6,6 +6,7 @@ const cookie=require('cookie-parser');
 const session=require('express-session');
 const passport=require('passport');
 const passportLocal=require('./config/passport');
+const googleStrategy=require('./config/passport-Google');
 const MongoStore=require('connect-mongo');
 const flash=require('connect-flash');
 const customMiddleware=require('./config/middleware');
