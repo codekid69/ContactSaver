@@ -33,3 +33,15 @@
     color: white;
     margin-top: 10px;
 }
+.Google-Login a i {
+    color: red;
+}
+.Google-Login .yellow{
+    color: yellow;
+}
+.Google-Login .green{
+    color: green;
+}
+.Google-Login .blue{
+    color: blue;
+}
