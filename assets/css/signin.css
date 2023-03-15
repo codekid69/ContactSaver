@@ -15,6 +15,9 @@
     width: 20rem;
     
 }
+.form form input{
+    color: white;
+}
 .sbtn{
     width: 25%;
     margin: auto;

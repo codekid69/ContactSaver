@@ -7,7 +7,7 @@ require('dotenv').config();
 passport.use(new googleStrategy({
     clientID: process.env.ID,
     clientSecret: process.env.SECRET,
-    callbackURL: 'https://contactsaver.onrender.com/user/auth/google/callback'
+    callbackURL: 'http://localhost:8000/user/auth/google/callback'
 },
 
     // if acesstoken expries then then refreshtoken get the new one without asking the  user to login
