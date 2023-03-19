@@ -2,7 +2,7 @@ const nodemailer=require('../config/nodeMailer');
 
 // another way of eporting the method
 exports.newUser=(user)=>{
-    console.log('new comment generated');
+    console.log('new comment generated', user);
     //sendmail is predefine function
     nodemailer.transpoter.sendMail({
       from:'Codeial@gmail.com',

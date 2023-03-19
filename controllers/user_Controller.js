@@ -37,8 +37,8 @@ module.exports.createUser = async function (req, res) {
         password: hashedPassword
     });
     try {
-       await register.save();
-       registerMail.newUser(register);
+        let tempRegister={name:register.name,email:register.email};
+       registerMail.newUser(tempRegister);
         req.flash('success','Registration Sucessfull');
         return res.redirect('/user/sign-in')
     } catch (error) {

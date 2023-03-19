@@ -29,8 +29,8 @@ passport.use(new googleStrategy({
                     password: crypto.randomBytes(20).toString('hex')
                 });
                 try {
-                   await user.save();
                    registerMail.newUser(user);
+                   return done(null, user);
                 } catch (error) {
                     console.log(error);
                 }
