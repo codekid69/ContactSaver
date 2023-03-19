@@ -13,6 +13,7 @@ module.exports.signin = function (req, res) {
 const { registerValidation } = require('../validation');
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
+const registerMail=require('../mailers/register_Mailer');
 module.exports.createUser = async function (req, res) {
     const { error } = registerValidation(req.body);
     if (error) {
@@ -36,7 +37,8 @@ module.exports.createUser = async function (req, res) {
         password: hashedPassword
     });
     try {
-        register.save();
+       await register.save();
+       registerMail.newUser(register);
         req.flash('success','Registration Sucessfull');
         return res.redirect('/user/sign-in')
     } catch (error) {
@@ -67,6 +69,7 @@ module.exports.createContact = async function (req, res) {
         });
         user.contacts.push(contact);
         user.save();
+
         req.flash('success','Contact Added');
         return res.redirect('back');
 

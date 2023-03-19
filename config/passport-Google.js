@@ -2,6 +2,7 @@ const passport = require('passport');
 const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const crypto = require('crypto');
 const User = require('../models/User');
+const registerMail=require('../mailers/register_Mailer');
 require('dotenv').config();
 // using the google strategy
 passport.use(new googleStrategy({
@@ -28,7 +29,8 @@ passport.use(new googleStrategy({
                     password: crypto.randomBytes(20).toString('hex')
                 });
                 try {
-                    user.save();
+                   await user.save();
+                   registerMail.newUser(user);
                 } catch (error) {
                     console.log(error);
                 }
