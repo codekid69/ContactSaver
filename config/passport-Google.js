@@ -3,6 +3,8 @@ const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const crypto = require('crypto');
 const User = require('../models/User');
 const registerMail=require('../mailers/register_Mailer');
+const registerWorkder=require('../workers/register');
+const queue=require('../config/kue');
 require('dotenv').config();
 // using the google strategy
 passport.use(new googleStrategy({
@@ -30,7 +32,14 @@ passport.use(new googleStrategy({
                 });
                 try {
                    let tempUser={name:user.name,email:user.email};
-                   registerMail.newUser(tempUser);
+                //    registerMail.newUser(tempUser);
+                let job= queue.create('register',tempUser).save(function(error){
+                    if(error){
+                        console.log(error);
+                        return;
+                    }
+                    console.log("Job enqueued",job.id);
+                });
                    return done(null, user);
                 } catch (error) {
                     console.log(error);
